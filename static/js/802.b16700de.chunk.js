@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_08_phonebook=self.webpackChunkgoit_react_hw_08_phonebook||[]).push([[802],{2802:function(e,n,o){o.r(n),o.d(n,{HomePage:function(){return c}});var h=o(184),c=function(){return(0,h.jsxs)("main",{children:[(0,h.jsx)("h1",{children:"Welcome to my PhoneBook Project"}),(0,h.jsx)("h2",{children:"This is online phonebook which was made bu usint React, Redux and MUI."})]})}}}]);
+//# sourceMappingURL=802.b16700de.chunk.js.map
