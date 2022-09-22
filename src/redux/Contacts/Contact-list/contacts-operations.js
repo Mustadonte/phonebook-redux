@@ -1,10 +1,10 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
-import * as contactsApi from './contacts-api';
+import * as contactsApi from "./contacts-api";
 
 export const fetchContacts = createAsyncThunk(
-  'contacts/items/fetchContacts',
+  "contacts/items/fetchContacts",
   async () => {
     const contacts = await contactsApi.fetchContacts();
     return contacts;
@@ -14,16 +14,17 @@ export const fetchContacts = createAsyncThunk(
 const isDuplicated = ({ name }, contacts) => {
   const toNormalizedName = name.toLowerCase();
   const result = contacts.find(
-    item => item.name.toLowerCase() === toNormalizedName
+    (item) => item.name.toLowerCase() === toNormalizedName
   );
   return Boolean(result);
 };
 
 export const addContact = createAsyncThunk(
-  'contacts/items/addContact',
+  "contacts/items/addContact",
   async (data, { rejectedWithValue }) => {
     try {
       const result = await contactsApi.addContact(data);
+      toast.success("Contact is added successfuly");
       return result;
     } catch (error) {
       return rejectedWithValue(error);
@@ -33,8 +34,8 @@ export const addContact = createAsyncThunk(
     condition: (data, { getState }) => {
       const { contacts } = getState();
       if (isDuplicated(data, contacts.items)) {
-        toast.error('This contact is allready exist', {
-          position: 'top-center',
+        toast.error("This contact is allready exist", {
+          position: "top-center",
           autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -49,7 +50,7 @@ export const addContact = createAsyncThunk(
 );
 
 export const removeContact = createAsyncThunk(
-  'contacts/items/removeContact',
+  "contacts/items/removeContact",
   async (id, { rejectWithValue }) => {
     try {
       await contactsApi.removeContact(id);
