@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/phonebook-redux/static/css/main.6adeccf1.css",
-    "main.js": "/phonebook-redux/static/js/main.1cb326a7.js",
+    "main.js": "/phonebook-redux/static/js/main.b2f92d6a.js",
     "static/css/669.ec1db714.chunk.css": "/phonebook-redux/static/css/669.ec1db714.chunk.css",
     "static/js/669.b9dea77e.chunk.js": "/phonebook-redux/static/js/669.b9dea77e.chunk.js",
     "static/js/657.cc92f6d6.chunk.js": "/phonebook-redux/static/js/657.cc92f6d6.chunk.js",
@@ -13,7 +13,7 @@
     "static/js/177.2d7e8a0d.chunk.js": "/phonebook-redux/static/js/177.2d7e8a0d.chunk.js",
     "index.html": "/phonebook-redux/index.html",
     "main.6adeccf1.css.map": "/phonebook-redux/static/css/main.6adeccf1.css.map",
-    "main.1cb326a7.js.map": "/phonebook-redux/static/js/main.1cb326a7.js.map",
+    "main.b2f92d6a.js.map": "/phonebook-redux/static/js/main.b2f92d6a.js.map",
     "669.ec1db714.chunk.css.map": "/phonebook-redux/static/css/669.ec1db714.chunk.css.map",
     "669.b9dea77e.chunk.js.map": "/phonebook-redux/static/js/669.b9dea77e.chunk.js.map",
     "657.cc92f6d6.chunk.js.map": "/phonebook-redux/static/js/657.cc92f6d6.chunk.js.map",
@@ -26,6 +26,6 @@
   },
   "entrypoints": [
     "static/css/main.6adeccf1.css",
-    "static/js/main.1cb326a7.js"
+    "static/js/main.b2f92d6a.js"
   ]
 }
