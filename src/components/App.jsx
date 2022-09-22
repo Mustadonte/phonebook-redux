@@ -1,36 +1,30 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { getFilteredContacts } from 'redux/Contacts/Contact-list/';
-import { Container } from '../Container/Container';
-import ContactForm from './ContactForm/ContactForm';
-import { ContactList } from './ContactList/ContactList';
-import { Filter } from './Filter/Filter';
-
-import * as contactsOperations from '../redux/Contacts/Contact-list/contacts-operations';
+import { useDispatch } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { UserRoutes } from '../Routes/UserRoutes';
+import { getCurrentUser } from 'redux/Auth/auth-operations';
 import { useEffect } from 'react';
 
 export const App = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getFilteredContacts);
 
   useEffect(() => {
-    dispatch(contactsOperations.fetchContacts());
+    dispatch(getCurrentUser());
   }, [dispatch]);
-
-  const formSubmitHandler = data => {
-    if (contacts.find(contact => contact.name === data.name)) {
-      return alert(`Contact of ${data.name} is already exist`);
-    }
-
-    dispatch(contactsOperations.addContact(data));
-  };
-
   return (
-    <Container>
-      <h1>Phonebook</h1>
-      <ContactForm onSubmit={formSubmitHandler} />
-      <h2>Search contact</h2>
-      <Filter />
-      <ContactList />
-    </Container>
+    <>
+      <UserRoutes />
+      <ToastContainer
+        position="top-right"
+        autoClose={800}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+    </>
   );
 };

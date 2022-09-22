@@ -1,19 +1,19 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { setFilter, getFilter } from 'redux/Contacts/Filter/';
-import css from './Filter.module.css';
 
+import TextField from '@mui/material/TextField';
 export const Filter = () => {
   const filter = useSelector(getFilter);
   const dispatch = useDispatch();
   return (
-    <label className={css.label}>
-      Поиск контактов
-      <input
-        type="text"
-        value={filter}
-        className={css.input}
-        onChange={e => dispatch(setFilter(e.target.value))}
-      />
-    </label>
+    <TextField
+      id="outlined-search"
+      name="filter"
+      label="Enter contact name"
+      type="search"
+      value={filter}
+      onChange={e => dispatch(setFilter(e.target.value))}
+      variant="standard"
+    />
   );
 };

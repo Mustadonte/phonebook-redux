@@ -23,6 +23,10 @@
     margin-bottom: 15px;
 }
 
+.inputM {
+margin-bottom: 12px;
+}
+
 .input:hover,
 input:focus {
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
